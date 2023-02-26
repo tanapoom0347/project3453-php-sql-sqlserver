@@ -1,18 +1,8 @@
 <?php 
-$serverName = "POOMPC\EXPRESS";
-$database = "Example";
-$uid = "demo";
-$pass = "sql@3453";
-
-$connection = [ 
-"Database" => $database,
-"Uid" => $uid,
-"PWD" => $pass,
-"CharacterSet" => "UTF-8"
-];
-
-$conn = sqlsrv_connect( $serverName, $connection);
-	
+	//Connection 'Example' Database
+	$serverName = "HP-HP\SQLEXPRESS";
+	$connectionInfo = array( "Database"=>"Example", "UID"=>"demo", "PWD"=>"sql@3453", "CharacterSet" => "UTF-8");
+	$conn = sqlsrv_connect( $serverName, $connectionInfo);
 	if( $conn === false ) {
 	    die( print_r( sqlsrv_errors(), true));
 	}
@@ -51,11 +41,11 @@ $conn = sqlsrv_connect( $serverName, $connection);
 	$c30 = "ประเภทปัญหา25";
 
 	//SQL
-	$num = 200000;
+	$num = 4374;
 	$top = "top $num";
 	$col = "$c1, $c2";
 	$orderby = " order by $c5, $c7, $c9, $c11, $c1";
-	$table = "t_d_part1";
+	$table = "t_d_part4";
 	$sql = "select $top * from $table$orderby";
 	//echo SQL
 	echo $sql."</br>";
@@ -63,8 +53,9 @@ $conn = sqlsrv_connect( $serverName, $connection);
 	if( $stmt === false) {
     die( print_r( sqlsrv_errors(), true) );
 }
-	else echo "connected";
- 	for ($x = 0; $x <= $num-1; $x++) {
+	$w1 = 0;
+	for ($x = 0; $x <= $num-1; $x++) {
+		$w1++;
 		$row = sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC); //OR SQLSRV_FETCH_NUMERIC
 		$params[$x] = array(
 			$c0=>$row[$c0],
@@ -118,7 +109,45 @@ $conn = sqlsrv_connect( $serverName, $connection);
 			if($params[$x][$c28]==null) $params[$x][$c28] = "null";
 			if($params[$x][$c29]==null) $params[$x][$c29] = "null";
 			if($params[$x][$c30]==null) $params[$x][$c30] = "null";
-		echo 
+		/* echo 
+			$params[$x][$c0].", ".
+			$params[$x][$c1].", ".
+			$params[$x][$c2].", ".
+			$params[$x][$c3].", ".
+			$params[$x][$c4].", ".
+			$params[$x][$c5].", ".
+			$params[$x][$c6].", ".
+			$params[$x][$c7].", ".
+			$params[$x][$c8].", ".
+			$params[$x][$c9].", ".
+			$params[$x][$c10].", ".
+			$params[$x][$c11].", ".
+			$params[$x][$c12].", ".
+			$params[$x][$c13].", ".
+			$params[$x][$c14].", ".
+			$params[$x][$c15].", ".
+			$params[$x][$c16].", ".
+			$params[$x][$c17].", ".
+			$params[$x][$c18].", ".
+			$params[$x][$c19].", ".
+			$params[$x][$c20].", ".
+			$params[$x][$c21].", ".
+			$params[$x][$c22].", ".
+			$params[$x][$c23].", ".
+			$params[$x][$c24].", ".
+			$params[$x][$c25].", ".
+			$params[$x][$c26].", ".
+			$params[$x][$c27].", ".
+			$params[$x][$c28].", ".
+			$params[$x][$c29].", ".
+			$params[$x][$c30].
+			"<br />"; */
+	}
+
+	echo "มีทั้งหมดจำนวน ".$w1." แถว";
+	echo "</br>ข้อมูลแถวแรก</br>";
+	$x = 0;
+	echo 
 			$params[$x][$c0].", ".
 			$params[$x][$c1].", ".
 			$params[$x][$c2].", ".
@@ -151,8 +180,41 @@ $conn = sqlsrv_connect( $serverName, $connection);
 			$params[$x][$c29].", ".
 			$params[$x][$c30].
 			"<br />";
-	}
-
+	echo "ข้อมูลแถวสุดท้าย</br>";
+	$w1 -= 1;
+	echo 
+			$params[$w1][$c0].", ".
+			$params[$w1][$c1].", ".
+			$params[$w1][$c2].", ".
+			$params[$w1][$c3].", ".
+			$params[$w1][$c4].", ".
+			$params[$w1][$c5].", ".
+			$params[$w1][$c6].", ".
+			$params[$w1][$c7].", ".
+			$params[$w1][$c8].", ".
+			$params[$w1][$c9].", ".
+			$params[$w1][$c10].", ".
+			$params[$w1][$c11].", ".
+			$params[$w1][$c12].", ".
+			$params[$w1][$c13].", ".
+			$params[$w1][$c14].", ".
+			$params[$w1][$c15].", ".
+			$params[$w1][$c16].", ".
+			$params[$w1][$c17].", ".
+			$params[$w1][$c18].", ".
+			$params[$w1][$c19].", ".
+			$params[$w1][$c20].", ".
+			$params[$w1][$c21].", ".
+			$params[$w1][$c22].", ".
+			$params[$w1][$c23].", ".
+			$params[$w1][$c24].", ".
+			$params[$w1][$c25].", ".
+			$params[$w1][$c26].", ".
+			$params[$w1][$c27].", ".
+			$params[$w1][$c28].", ".
+			$params[$w1][$c29].", ".
+			$params[$w1][$c30].
+			"<br />";
 	//Free $smtmt
 	sqlsrv_free_stmt($stmt);
 
