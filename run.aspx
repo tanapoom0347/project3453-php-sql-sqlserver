@@ -19,8 +19,6 @@
         .$c11."= '".$param1[$num_row1][$c11]."'";
     echo "</br>".$sqlexec1; */
 
-    set_time_limit(0);
-
     for($x=1;$x<=$num_row1;$x++){
         for($i=1;$i<=$num_row2;$i++){
             if  (
@@ -38,26 +36,29 @@
                     ($param1[$x][$c12] == $param2[$i][$c12])
                 ) 
             {
-                $sqlupdate = "Update ".$table1." SET "
-                    .$c14." = 1, "
-                    .$c15." = 'ไม่มีบ้านอยู่' ";
-                $sqlupdate .= "WHERE "
-                    .$c1." = '".$param1[$x][$c1]."' AND "
-                    .$c2." = '".$param1[$x][$c2]."' AND "
-                    .$c3." = '".$param1[$x][$c3]."' AND "
-                    .$c4." = '".$param1[$x][$c4]."' AND "
-                    .$c5." = '".$param1[$x][$c5]."' AND "
-                    .$c6." = '".$param1[$x][$c6]."' AND "
-                    .$c7." = '".$param1[$x][$c7]."' AND "
-                    .$c8." = '".$param1[$x][$c8]."' AND "
-                    .$c9." = '".$param1[$x][$c9]."' AND "
-                    .$c10." = '".$param1[$x][$c10]."' AND "
-                    .$c11." = '".$param1[$x][$c11]."'";
-                echo $sqlupdate."</br>";
+                $sqlupdate = "Update ? SET ? = 1, ? = 'ไม่มีบ้านอยู่' WHERE ? = '?' AND ? = '?' AND ? = '?' AND ? = '?' AND ? = '?' AND ? = '?' AND ? = '?' AND ? = '?' AND ? = '?' AND ? = '?' AND ? = '?' AND ? = '?'";
+                $stmtupdate = sqlsrv_prepare($conn,$sqlupdate,array(
+                    &$table1,&$c14,&$c15,
+                    &$c1,&$param1[$x][$c1],
+                    &$c2,&$param1[$x][$c2],
+                    &$c3,&$param1[$x][$c3],
+                    &$c4,&$param1[$x][$c4],
+                    &$c5,&$param1[$x][$c5],
+                    &$c6,&$param1[$x][$c6],
+                    &$c7,&$param1[$x][$c7],
+                    &$c8,&$param1[$x][$c8],
+                    &$c9,&$param1[$x][$c9],
+                    &$c10,&$param1[$x][$c10],
+                    &$c11,&$param1[$x][$c11],
+                    &$c12,&$param1[$x][$c12]
+                    )
+                );
+                /* echo $sqlupdate."</br>"; */
+                sqlsrv_execute($stmtupdate);
             }
         }
     }
-
+    echo "success!!! b01 yeah!";
 	/////////Close///////////
 	sqlsrv_close($conn);
 ?>
