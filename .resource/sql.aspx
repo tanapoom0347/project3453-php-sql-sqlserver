@@ -9,7 +9,7 @@
     //SQL1
 	$sql1 = "select $top1 * from $table1 $orderby1";
 	//echo SQL
-	echo $sql1."</br>";
+	/* echo $sql1."</br>"; */
 
     //SQL2
 	$num_row2 = 210254;
@@ -20,6 +20,6 @@
     //SQL2
 	$sql2 = "select $top2 * from $table2 $orderby2";
 	//echo SQL2
-	echo $sql2."</br>";
+	/* echo $sql2."</br>"; */
 
 ?>

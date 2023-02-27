@@ -1,5 +1,7 @@
+<?php
 for (x=0;x<=??;x++) {
 	for(i=0;i<=??,i++){
-		if (param[x][0-11]=param2[i][0-11]) {param[x][13]=1,param[x][14]=""
-		echo param[x][0-30]<br>}
+		if (param[x][1-12]==param2[i][1-12]) {/* param[x][13]=1,param[x][14]="" */
+		echo sqlupdate;
+		query sqlupdate;}
  }

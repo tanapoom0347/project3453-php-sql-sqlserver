@@ -49,7 +49,7 @@
     }
     //Free $smtmt1
     sqlsrv_free_stmt($stmt1); /* echo "suc"; */
-    echo "</br>".$num_row1." ".$param1[$num_row1][$c4];
+    /* echo "</br>".$num_row1." ".$param1[$num_row1][$c4]; */
 
     //เก็บค่าในparam2
     for ($x = 1; $x <= $num_row2; $x++) {
