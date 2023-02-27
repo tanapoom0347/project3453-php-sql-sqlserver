@@ -5,7 +5,7 @@
 	$top1 = "top $num_row1";
 	/* $col = "$c1, $c2"; */
 	$orderby1 = "order by $c6, $c8, $c10, $c12, $c2";
-	$table1 = "t_d_part1";
+	$table1 = "t_d1_test";
     //SQL1
 	$sql1 = "select $top1 * from $table1 $orderby1";
 	//echo SQL

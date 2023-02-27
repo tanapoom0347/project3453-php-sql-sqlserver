@@ -72,6 +72,6 @@
 		);
     }
     //Free $smtmt2
-    sqlsrv_free_stmt($stmt2); /* echo "cess!"; */
-    echo "</br>".$num_row2." ".$param2[$num_row2][$c4];
+    sqlsrv_free_stmt($stmt2); /* echo "cess!</br>"; */
+    /* echo "</br>".$num_row2." ".$param2[$num_row2][$c4]; */
 ?>
