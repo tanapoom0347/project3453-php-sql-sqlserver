@@ -2,11 +2,11 @@
     require'conn.aspx';
     require'sql.aspx';
 	$stmt1 = sqlsrv_query($conn,$sql1);
-	if( $stmt1 === false) {
+	if($stmt1===false) {
     die( print_r(sqlsrv_errors(),true));
     }else /* echo "</br>1"; */
 	$stmt2 = sqlsrv_query($conn,$sql2);
-	if( $stmt2 === false) {
+	if($stmt2===false) {
     die( print_r(sqlsrv_errors(),true));
     }else /* echo "</br>2"; */
 
@@ -48,8 +48,10 @@
 		);
     }
     //Free $smtmt1
+	/* $x = 1; */
     sqlsrv_free_stmt($stmt1); /* echo "suc"; */
-    /* echo "</br>".$num_row1." ".$param1[$num_row1][$c4]; */
+	/* echo "</br>".$x." ".$param1[$x][$c4];
+    echo "</br>".$num_row1." ".$param1[$num_row1][$c4]; */
 
     //เก็บค่าในparam2
     for ($x = 1; $x <= $num_row2; $x++) {
