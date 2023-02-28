@@ -19,7 +19,7 @@
         .$c11."= '".$param1[$num_row1][$c11]."'";
     echo "</br>".$sqlexec1; */
 
-    echo "<h2>เริ่ม!!</h2></br><br/>";
+    echo "<h2>เริ่ม!!</h2></br>";
     echo "running............................</br>";
 
     for($x=1;$x<=$num_row1;$x++){
