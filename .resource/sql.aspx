@@ -21,8 +21,8 @@
 	b24 241380
 	b25 243241 
 	*/
-	$num_row2 = 210254;
-	$table2 = "b01";
+	$num_row2 = 357584;
+	$table2 = "b02";
     //SQL
 	$sql2 = "select top $num_row2 * from $table2 $orderby1";
 	//echo SQL2

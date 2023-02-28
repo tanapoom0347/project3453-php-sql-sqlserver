@@ -19,8 +19,11 @@
         .$c11."= '".$param1[$num_row1][$c11]."'";
     echo "</br>".$sqlexec1; */
 
-    echo "<h2>เริ่ม!!</h2></br>";
+    echo "<b>เริ่ม!!</b></br>";
     echo "running............................</br>";
+    echo "กำลัง.. Update ข้อมูลตาราง t_demo_dist_test 814,374 แถว เทียบกับตาราง ".$table2." > ".number_format($num_row2)." แถว";
+    echo "</br></br>อัพเดตข้อมูลไปแล้ว</br>1. ";
+    $j = 1; $k = 1;
 
     for($x=1;$x<=$num_row1;$x++){
         for($i=1;$i<=$num_row2;$i++){
@@ -39,7 +42,7 @@
                     ($param1[$x][$c12] == $param2[$i][$c12])
                 ) 
             {
-                $sqlupdate = "Update ".$table1." SET ".$c14." = 1, ".$c15." = 'ไม่มีบ้านอยู่' WHERE "
+                $sqlupdate = "Update ".$table1." SET ".$c16." = 2, ".$c17." = 'บ้านชำรุด/ทรุดโทรม' WHERE "
                 .$c1." = '".$param1[$x][$c1]."' AND "
                 .$c2." = '".$param1[$x][$c2]."' AND "
                 .$c3." = '".$param1[$x][$c3]."' AND "
@@ -57,13 +60,14 @@
                 if($stmtupdate===false) {
                     die(print_r(sqlsrv_errors(),true));
                }
+               echo $j.","; $j++;
+               if(($j%100)==0){$k++;echo "</br>".$k.". ";}
             }
         }
     }
 
-    for($i=1;$i<=40;$i++) {
-        echo "success!!! ".$table2." yeah!!!!</br>";
-    }
+
+    echo "</br>success!!! ".$table2." yeah!!!!";
 	/////////Close///////////
 	sqlsrv_close($conn);
     unset($param1);
