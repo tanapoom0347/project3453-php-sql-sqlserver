@@ -57,7 +57,13 @@
             }
         }
     }
-    echo "success!!! b01 yeah!";
+
+    for($i=1;$i<=40;$i++) {
+        echo "success!!! ".$table2." yeah!!!!</br>";
+    }
 	/////////Close///////////
 	sqlsrv_close($conn);
+    unset($param1);
+    unset($param2);
+    sqlsrv_free_stmt($stmtupdate);
 ?>
