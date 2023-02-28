@@ -5,6 +5,7 @@
     $stmt1 = sqlsrv_query($conn,$sql1);
 	if($stmt1===false) {
     die( print_r(sqlsrv_errors(),true));
+	}
 
     //เก็บค่าในparam1
     for ($x = 1; $x <= $num_row1; $x++) {
