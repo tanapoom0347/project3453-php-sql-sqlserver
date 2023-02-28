@@ -19,6 +19,9 @@
         .$c11."= '".$param1[$num_row1][$c11]."'";
     echo "</br>".$sqlexec1; */
 
+    echo "<h2>เริ่ม.....</h2></br><br/>";
+    echo "running............................</br>";
+
     for($x=1;$x<=$num_row1;$x++){
         for($i=1;$i<=$num_row2;$i++){
             if  (
