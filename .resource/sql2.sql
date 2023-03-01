@@ -36,3 +36,8 @@ from t_d08 left join b25_dist on (t_d08.ชื่อ = b25_dist.ชื่อ) an
   + (CASE WHEN c23 IS NOT NULL THEN 1 ELSE 0 END)
   + (CASE WHEN c24 IS NOT NULL THEN 1 ELSE 0 END)
   + (CASE WHEN c25 IS NOT NULL THEN 1 ELSE 0 END)) AS sum_of_nulls
+
+  select ชื่อ, count(ชื่อ), นามสกุล, count(นามสกุล), เลขประจำตัวประชาชน, count(เลขประจำตัวประชาชน), mcode, count(mcode)
+  from b01
+  group by ชื่อ, นามสกุล, เลขประจำตัวประชาชน, mcode
+  having (count(ชื่อ)>1) AND (count(นามสกุล)>1) AND (count(เลขประจำตัวประชาชน)>1) AND (count(mcode)>1)
