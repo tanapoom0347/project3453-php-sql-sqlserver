@@ -5,3 +5,6 @@ for (x=0;x<=??;x++) {
 		echo sqlupdate;
 		query sqlupdate;}
  }
+
+ if *ชื่อ สกุล เลขประจำ mcode*
+

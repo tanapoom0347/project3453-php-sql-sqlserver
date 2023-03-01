@@ -18,7 +18,7 @@
         .$c10."= '".$param1[$num_row1][$c10]."' AND "
         .$c11."= '".$param1[$num_row1][$c11]."'";
     echo "</br>".$sqlexec1; */
-
+    echo "<h1  style='text-align:center;'>Update !!</h1>";
     echo "<b>เริ่ม!!</b></br>";
     echo "running............................</br>";
     echo "กำลัง.. Update ข้อมูลตาราง t_demo_dist_test 814,374 แถว เทียบกับตาราง ".$table2." > ".number_format($num_row2)." แถว";

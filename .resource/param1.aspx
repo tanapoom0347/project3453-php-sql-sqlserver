@@ -8,7 +8,7 @@
 	}
 
     //เก็บค่าในparam1
-    for ($x = 1; $x <= $num_row1; $x++) {
+    for ($x = 1;$x<=$num_row1;$x++) {
         $row = sqlsrv_fetch_array($stmt1,SQLSRV_FETCH_ASSOC); //OR SQLSRV_FETCH_NUMERIC
 		$param1[$x] = array(
 			$c1=>$row[$c1],
@@ -45,8 +45,8 @@
 		);
     }
     //Free $smtmt1
-	/* $x = 1; */
     sqlsrv_free_stmt($stmt1); /* echo "suc"; */
-	/* echo "</br>".$x." ".$param1[$x][$c4];
-    echo "</br>".$num_row1." ".$param1[$num_row1][$c4]; */
+	$x = 1;
+	echo "</br>".$x." ".$param1[$x][$c4];
+    echo "</br>".$num_row1." ".$param1[$num_row1][$c4];
 ?>

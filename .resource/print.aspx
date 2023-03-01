@@ -1,5 +1,6 @@
 <?php 
 $num_row889 = 357584;
+echo "<h1  style='text-align:center;'>Update !!</h1>";
 echo "<b>เริ่ม!!</b></br>";
 echo "running............................</br>";
 echo "กำลัง.. Update ข้อมูลตาราง t_demo_dist_test 814,374 แถว เทียบกับตาราง b02 > ".number_format($num_row889)." แถว";
