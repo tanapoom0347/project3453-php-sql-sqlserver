@@ -1,3 +1,10 @@
+https  
+https://www.youtube.com/watch?v=AKZU3SBZhfo  
+--------------------------  
+RewriteEngine On  
+RewriteCond %{HTTPS} off  
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]  
+--------------------------  
 หากต้องการ Run param1 กับ b02,b03,b04,...,b25  
 ให้ไปแก้ table2 ในไฟล์ sql.aspx ในโฟเดอร์ .resource  
 ////// สำคัญมาก //////  
