@@ -42,7 +42,7 @@ from t_d08 left join b25_dist on (t_d08.ชื่อ = b25_dist.ชื่อ) an
   group by ชื่อ, นามสกุล, เลขประจำตัวประชาชน, mcode
   having (count(ชื่อ)>1) AND (count(นามสกุล)>1) AND (count(เลขประจำตัวประชาชน)>1) AND (count(mcode)>1)  
   
-  select คำนำหน้า, ชื่อ, สกุล, บัตรประชาชน, จังหวัด  
+  select คำนำหน้า, ชื่อ, สกุล, บัตรประชาชน, จังหวัด, count(บัตรประชาชน) as cnt  
   from tb06  
   group by คำนำหน้า, ชื่อ, สกุล, บัตรประชาชน,จังหวัด  
   having (count(คำนำหน้า)>1) AND (count(ชื่อ)>1) AND (count(สกุล)>1) AND (count(บัตรประชาชน)>1) AND (count(จังหวัด)>1)  
