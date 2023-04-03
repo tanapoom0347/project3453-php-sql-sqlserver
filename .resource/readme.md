@@ -28,14 +28,14 @@ select t_d08.คำนำหน้า, t_d08.ชื่อ, t_d08.นามสก
 from t_d08 left join b25_dist on (t_d08.ชื่อ = b25_dist.ชื่อ) and (t_d08.นามสกุล = b25_dist.นามสกุล) and (t_d08.เลขประจำตัวประชาชน = b25_dist.เลขประจำตัวประชาชน) and   (t_d08.mcode = b25_dist.mcode)
   
 ((CASE WHEN c1 IS NOT NULL THEN 1 ELSE 0 END)  
-  + (CASE WHEN c2 IS NOT NULL THEN 1 ELSE 0 END)  
-  + (CASE WHEN c3 IS NOT NULL THEN 1 ELSE 0 END)  
-  + (CASE WHEN c4 IS NOT NULL THEN 1 ELSE 0 END)  
-  + (CASE WHEN c21 IS NOT NULL THEN 1 ELSE 0 END)  
-  + (CASE WHEN c22 IS NOT NULL THEN 1 ELSE 0 END)  
-  + (CASE WHEN c23 IS NOT NULL THEN 1 ELSE 0 END)  
-  + (CASE WHEN c24 IS NOT NULL THEN 1 ELSE 0 END)  
-  + (CASE WHEN c25 IS NOT NULL THEN 1 ELSE 0 END)) AS sum_of_nulls  
+  \+ (CASE WHEN c2 IS NOT NULL THEN 1 ELSE 0 END)  
+  \+ (CASE WHEN c3 IS NOT NULL THEN 1 ELSE 0 END)  
+  \+ (CASE WHEN c4 IS NOT NULL THEN 1 ELSE 0 END)  
+  \+ (CASE WHEN c21 IS NOT NULL THEN 1 ELSE 0 END)  
+  \+ (CASE WHEN c22 IS NOT NULL THEN 1 ELSE 0 END)  
+  \+ (CASE WHEN c23 IS NOT NULL THEN 1 ELSE 0 END)  
+  \+ (CASE WHEN c24 IS NOT NULL THEN 1 ELSE 0 END)  
+  \+ (CASE WHEN c25 IS NOT NULL THEN 1 ELSE 0 END)) AS sum_of_nulls  
   select ชื่อ, count(ชื่อ), นามสกุล, count(นามสกุล), เลขประจำตัวประชาชน, count(เลขประจำตัวประชาชน), mcode, count(mcode)  
   from b01  
   group by ชื่อ, นามสกุล, เลขประจำตัวประชาชน, mcode  
